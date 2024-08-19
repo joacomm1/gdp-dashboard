@@ -75,14 +75,7 @@ But it's otherwise a great (and did I mention _free_?) source of data.
 ''
 ''
 
-min_value = gdp_df['Year'].min()
-max_value = gdp_df['Year'].max()
 
-from_year, to_year = st.slider(
-    'Which years are you interested in?',
-    min_value=min_value,
-    max_value=max_value,
-    value=[min_value, max_value])
 
 countries = gdp_df['Country Code'].unique()
 
@@ -97,7 +90,14 @@ selected_countries = st.multiselect(
 ''
 ''
 ''
+min_value = gdp_df['Year'].min()
+max_value = gdp_df['Year'].max()
 
+from_year, to_year = st.slider(
+    'Which years are you interested in?',
+    min_value=min_value,
+    max_value=max_value,
+    value=[min_value, max_value])
 # Filter the data
 filtered_gdp_df = gdp_df[
     (gdp_df['Country Code'].isin(selected_countries))
