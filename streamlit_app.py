@@ -129,7 +129,7 @@ st.header(f'GDP in {to_year}', divider='gray')
  
 ''
 
-cols = st.columns(1)
+cols = st.columns(10)
 
 for i, country in enumerate(selected_countries):
     col = cols[i % len(cols)]
